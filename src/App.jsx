@@ -1,17 +1,23 @@
 import Hello from "./components/Hello/Hello";
-
+import { useState } from "react";
 
 function App() {
   
-  const nimi = "Pekka";
-  const ika = 10;
-  
+  const [counter, setCounter] = useState(0);
+
+  // const handleClick = () => {
+  //   console.log("clicked");
+  // }
+
+  const increment = () => setCounter(counter + 1);
+  const zero = () => setCounter(0);
+
 
   return (
     <>
-    <h1>Greetings!</h1>
-    <Hello name="Maya" age={26 + 10} />
-    <Hello name={nimi} age={ika} />
+      <div>{counter}</div>
+      <button onClick={increment}>Plus</button>
+      <button onClick={zero}>Zero</button>
     </>
   )
 }
